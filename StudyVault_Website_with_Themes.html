@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyVault</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #00bcd4;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            opacity: 0.8;
+        }
+        .search-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .search-container input {
+            width: 60%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px;
+        }
+        .feature {
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .feature h3 {
+            color: #00bcd4;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+        .theme-selector {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .theme-selector button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .theme-selector button:hover {
+            opacity: 0.8;
+        }
+        /* Default Theme (Dark) */
+        body.dark {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        header.dark, footer.dark, .feature.dark, nav.dark a {
+            background-color: #1f1f1f;
+            color: #ffffff;
+        }
+        nav.dark a:hover {
+            background-color: #00bcd4;
+        }
+        .feature.dark {
+            border: 1px solid #333333;
+        }
+        .search-container button.dark {
+            background-color: #00bcd4;
+        }
+        /* Light Theme */
+        body.light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header.light, footer.light, .feature.light, nav.light a {
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+        nav.light a:hover {
+            background-color: #e0e0e0;
+        }
+        .search-container button.light {
+            background-color: #007bff;
+        }
+        /* Baby Pink Theme */
+        body.pink {
+            background-color: #ffe4e6;
+            color: #4a4a4a;
+        }
+        header.pink, footer.pink, .feature.pink, nav.pink a {
+            background-color: #ffccd5;
+            color: #4a4a4a;
+        }
+        nav.pink a:hover {
+            background-color: #ff99a1;
+        }
+        .search-container button.pink {
+            background-color: #ff758c;
+        }
+        /* Sky Blue Theme */
+        body.blue {
+            background-color: #e3f2fd;
+            color: #01579b;
+        }
+        header.blue, footer.blue, .feature.blue, nav.blue a {
+            background-color: #90caf9;
+            color: #01579b;
+        }
+        nav.blue a:hover {
+            background-color: #42a5f5;
+        }
+        .search-container button.blue {
+            background-color: #1e88e5;
+        }
+        /* Pale Green Theme */
+        body.green {
+            background-color: #e8f5e9;
+            color: #1b5e20;
+        }
+        header.green, footer.green, .feature.green, nav.green a {
+            background-color: #a5d6a7;
+            color: #1b5e20;
+        }
+        nav.green a:hover {
+            background-color: #66bb6a;
+        }
+        .search-container button.green {
+            background-color: #43a047;
+        }
+    </style>
+    <script>
+        function changeTheme(theme) {
+            document.body.className = theme;
+            document.querySelectorAll('header, footer, .feature, nav a, .search-container button').forEach(el => {
+                el.className = theme;
+            });
+        }
+    </script>
+</head>
+<body class="dark">
+    <header class="dark">
+        <h1>StudyVault</h1>
+        <p>Your Study Companion for Success</p>
+    </header>
+    <nav class="dark">
+        <a href="#">Home</a>
+        <a href="#">Library</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="theme-selector">
+        <h3>Choose a Theme</h3>
+        <button onclick="changeTheme('dark')">Dark</button>
+        <button onclick="changeTheme('light')">White</button>
+        <button onclick="changeTheme('pink')">Baby Pink</button>
+        <button onclick="changeTheme('blue')">Sky Blue</button>
+        <button onclick="changeTheme('green')">Pale Green</button>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Search by Course Code or Title">
+        <button class="dark">Search</button>
+    </div>
+    <section class="features">
+        <div class="feature dark">
+            <h3>Lecture Notes</h3>
+            <p>Access comprehensive notes for all your courses.</p>
+        </div>
+        <div class="feature dark">
+            <h3>Past Questions</h3>
+            <p>Prepare with past exam questions and solutions.</p>
+        </div>
+        <div class="feature dark">
+            <h3>Tutorials</h3>
+            <p>Learn with step-by-step video tutorials.</p>
+        </div>
+        <div class="feature dark">
+            <h3>Assignments</h3>
+            <p>Get help with assignments and projects.</p>
+        </div>
+    </section>
+    <footer class="dark">
+        <p>© 2024 StudyVault | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
